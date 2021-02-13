@@ -132,6 +132,12 @@ searchBtn.addEventListener('click', function () {
 })
 
 
+document.getElementById('duration').addEventListener('keypress', function(event){
+  if (event.key === 'Enter') {
+    document.getElementById('create-slider').click();
+  }
+})
+
 sliderBtn.addEventListener('click', function () {
-  createSlider()
+  createSlider();
 })
