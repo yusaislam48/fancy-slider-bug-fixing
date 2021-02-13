@@ -67,7 +67,15 @@ const createSlider = () => {
   document.querySelector('.main').style.display = 'block';
   // hide image aria
   imagesArea.style.display = 'none';
-  const duration = document.getElementById('duration').value || 1000;
+  const duration = () =>{
+    const duration = document.getElementById('duration').value || 1000;
+    if (duration < 0) {
+      alert("Don't enter any minus value next time! [Default = 1000 millisecond]");
+      return 1000;
+    }else{
+      return duration;
+    }
+  } 
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
@@ -80,7 +88,7 @@ const createSlider = () => {
   timer = setInterval(function () {
     slideIndex++;
     changeSlide(slideIndex);
-  }, duration);
+  }, duration());
 }
 
 // change slider index 
