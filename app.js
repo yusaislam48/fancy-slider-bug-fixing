@@ -15,6 +15,7 @@ const KEY = '15674931-a9d714b6e9d654524df198e00&q';
 
 // show images 
 const showImages = (images) => {
+  resultImages(images.length);
   imagesArea.style.display = 'block';
   gallery.innerHTML = '';
   // show gallery title
@@ -151,4 +152,12 @@ const toggleSpinner = (show) => {
   } else {
     spinner.classList.add('d-none');
   }
+}
+
+
+const resultImages = (images) =>{
+  const resultImages = document.getElementById('resultImages');
+  resultImages.innerHTML = `
+    <h4>Total result images: <span style="color: black">${images}</span></h4>
+  `
 }
