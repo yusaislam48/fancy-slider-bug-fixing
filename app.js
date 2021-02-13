@@ -117,6 +117,12 @@ const changeSlide = (index) => {
   items[index].style.display = "block"
 }
 
+document.getElementById('search').addEventListener('keypress', function(event){
+  if (event.key === 'Enter') {
+    document.getElementById('search-btn').click();
+  }
+})
+
 searchBtn.addEventListener('click', function () {
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
@@ -124,6 +130,7 @@ searchBtn.addEventListener('click', function () {
   getImages(search.value)
   sliders.length = 0;
 })
+
 
 sliderBtn.addEventListener('click', function () {
   createSlider()
