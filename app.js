@@ -160,6 +160,6 @@ const toggleSpinner = (show) => {
 const resultImages = (images) =>{
   const resultImages = document.getElementById('resultImages');
   resultImages.innerHTML = `
-    <h4>Total result images: <span style="color: black">${images}</span></h4>
+    <h4>Total <span style="color: black">${images}</span> images found!</h4>
   `
 }
